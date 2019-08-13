@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:includeFontPadding="false"
+        tools:text="“北京的景点”"
+        android:textColor="#99FFFFFF"
+        android:textSize="24dp"/>
+
+    <TextView
+        android:id="@+id/tv_tts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center_horizontal"
+        android:includeFontPadding="false"
+        tools:text="“为你推荐北京著名的景点”"
+        android:textColor="#FFFFFF"
+        android:textSize="24dp"/>
+
+</LinearLayout>

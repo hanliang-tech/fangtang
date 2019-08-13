@@ -1,0 +1,16 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sunrain.test.ui">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:name="com.sunrain.ui.DemoApp"
+        android:supportsRtl="true" >
+
+        <meta-data android:name="FT_SDK_KEY" android:value="DtgkxMWXubQHmlyM"/>
+        <meta-data android:name="FT_SDK_SECRET" android:value="5358571d5faebc2e5727fb991703edbd"/>
+
+    </application>
+</manifest>

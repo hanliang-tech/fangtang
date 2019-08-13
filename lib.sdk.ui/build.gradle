@@ -1,0 +1,74 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply from: '../gradle-mvn-push.gradle'
+
+def cfg = rootProject.ext.configuration
+
+android {
+    compileSdkVersion cfg.compileSdkVersion
+
+
+    defaultConfig {
+        minSdkVersion cfg.minSdkVersion
+        targetSdkVersion cfg.targetSdkVersion
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        releaseConfig {
+            storeFile file(project.releaseKeystorePath)
+            storePassword project.releaseKeystorePassword
+            keyAlias project.releaseKeystoreAlias
+            keyPassword project.releaseKeystorePassword
+        }
+
+        debugConfig {
+            storeFile file(project.releaseKeystorePath)
+            storePassword project.releaseKeystorePassword
+            keyAlias project.releaseKeystoreAlias
+            keyPassword project.releaseKeystorePassword
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.releaseConfig
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            minifyEnabled false
+            signingConfig signingConfigs.debugConfig
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    api('com.fangtang.tv:ui-base:2.0.0') {
+        exclude group: 'com.android.support', module: 'design'
+    }
+    implementation 'com.fangtang.tv:glide:2.0.0'
+    implementation('com.fangtang.tv:item2:2.0.0') { transitive false }
+    implementation 'com.fangtang.tv:render:2.0.0'
+    implementation('com.fangtang.tv:waterfall:2.0.0') { transitive false }
+    implementation 'com.fangtang.tv:support-v4:2.0.0'
+
+    if(cfg.useMaven){
+        api("com.fangtang.tv.sdk:app:$fangtang_sdk_version") { changing = true }
+        api("com.fangtang.tv.sdk:sdk:$fangtang_sdk_version") { changing = true }
+    }else{
+        api project(path: ':lib.app')
+        api project(path: ':lib.sdk')
+    }
+}

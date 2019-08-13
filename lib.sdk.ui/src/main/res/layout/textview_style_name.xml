@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.fangtang.tv.sdk.ui.view.BindDeviceTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/device_bg_name"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingLeft="25dp"
+    android:paddingTop="10dp"
+    android:paddingRight="25dp"
+    android:paddingBottom="10dp"
+    android:textColor="#FFFFFF"
+    android:textSize="24dp"
+    tools:text="小爱音箱" />

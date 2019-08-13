@@ -1,0 +1,56 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply from: '../gradle-mvn-push.gradle'
+
+def cfg = rootProject.ext.configuration
+def lib = rootProject.ext.libraries
+
+android {
+    compileSdkVersion cfg.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion cfg.minSdkVersion
+        targetSdkVersion cfg.targetSdkVersion
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath false
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+
+    api lib['utilcode']
+    api lib['retrofit2']
+
+    if(cfg.useMaven){
+        api("com.fangtang.tv.sdk:base:$fangtang_sdk_version") { changing = true }
+        api("com.fangtang.tv.sdk:download:$fangtang_sdk_version") { changing = true }
+        api("com.fangtang.tv.sdk:download-view:$fangtang_sdk_version") { changing = true }
+    }else{
+        api project(path: ':lib.download')
+        api project(path: ':lib.download.view')
+        api project(path: ':lib.sdk.base')
+    }
+
+    api('com.android.support:support-v4:21.0.3')
+
+    api lib['kotlin-jdk7']
+
+}

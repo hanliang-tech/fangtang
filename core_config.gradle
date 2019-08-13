@@ -1,0 +1,33 @@
+static def gitVersion() {
+    def cmd = 'git rev-list HEAD --count'
+    cmd.execute().text.trim().toInteger()
+}
+
+def versionName = PRE_VERSION_NAME + "." + gitVersion()
+def versionCode = gitVersion()
+
+ext {
+    configuration = [
+            compileSdkVersion: 28,
+            targetSdkVersion : 28,
+            minSdkVersion    : 17,
+            versionCode      : versionCode,
+            versionName      : versionName,
+    ]
+
+    libraries = [
+            'android-annotations'       : 'com.android.support:support-annotations:28.0.0',
+            'kotlin-jdk7'               : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            'kotlinx-coroutines-core'   : 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1',
+            'kotlinx-coroutines-android': 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1',
+
+            // OK HTTP
+            'okhttp3'                   : "com.squareup.okhttp3:okhttp:$okhttp_version",
+            'okhttp3-logging'           : "com.squareup.okhttp3:logging-interceptor:$okhttp_version",
+
+            'retrofit2'                 : "com.squareup.retrofit2:converter-gson:$retrofit_version",
+            'okio'                      : 'com.squareup.okio:okio:1.15.0',
+            'okhttpprofiler'            : 'com.itkacher.okhttpprofiler:okhttpprofiler:1.0.4',
+            'utilcode'                  : 'com.blankj:utilcode:1.23.7',
+    ]
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.fangtang.tv.sdk.ui.tips.TipTextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:singleLine="true"
+    android:layout_gravity="center"
+    android:includeFontPadding="false"
+    android:textSize="17dp"
+    tools:text="下一页"
+    tools:textColor="#FFF"
+    tools:background="@drawable/bg_selector_white"/>

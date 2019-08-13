@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:minWidth="650dp"
+    android:minHeight="460dp"
+    android:layout_gravity="center"
+    android:background="@drawable/code_dialog_bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_device_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_vertical"
+        tools:text="发现“小爱同学”智能音箱"
+        android:textColor="#FFFFFF"
+        tools:drawableLeft="@drawable/pic_find_device_ft"
+        android:drawablePadding="8dp"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/tv_device_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:gravity="center_horizontal"
+        tools:text="连接方式：对智能音箱说“打开方糖影视”，根据提示，\n念出下方数字即可用音箱控制电视："
+        android:textColor="#B2FFFFFF"
+        android:textSize="23dp"/>
+
+    <LinearLayout
+        android:id="@+id/dialog_code_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:animateLayoutChanges="true"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="44dp">
+
+        <TextView
+            android:id="@+id/tv_more"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:textSize="36dp"
+            android:textColor="@color/tv_button_white"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/bg_button_find_device"
+            android:text="查看详情"/>
+
+        <View
+            android:layout_width="30dp"
+            android:layout_height="1dp"
+            android:textSize="24dp"
+            android:textColor="#FFFFFF"/>
+
+        <TextView
+            android:id="@+id/tv_close"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:textSize="36dp"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:textColor="@color/tv_button_white"
+            android:background="@drawable/bg_button_find_device"
+            android:layout_marginRight="30dp"
+            android:text="关闭"/>
+
+    </LinearLayout>
+
+</LinearLayout>

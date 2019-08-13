@@ -1,0 +1,4 @@
+<resources>
+    <string name="install_ok">安装完勿直接打开，返回并再次点击影片</string>
+    <string name="install_tcl">安装完成，再次点击节目即可播放</string>
+</resources>

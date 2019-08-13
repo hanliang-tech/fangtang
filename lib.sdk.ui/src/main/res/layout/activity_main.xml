@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.fangtang.tv.baseui.view.FRootView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.fangtang.tv.sdk.ui.tips.AIFuncView
+        android:id="@+id/ai_funcview"
+        android:layout_width="match_parent"
+        android:layout_height="86dp"/>
+
+    <FrameLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="95dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingBottom="30dp"/>
+
+</com.fangtang.tv.baseui.view.FRootView>

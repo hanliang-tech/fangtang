@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.fangtang.tv.sdk.ui.view.DeviceBindView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/device_bind_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/container_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_device_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:textColor="#FFFFFF"
+            android:textSize="30.7dp"
+            tools:text="说打开方糖" />
+
+        <LinearLayout
+            android:id="@+id/dynamic_child_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="horizontal" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_device_info"
+        android:layout_width="1160dp"
+        android:layout_height="450dp"
+        android:layout_below="@id/container_top"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="50dp"
+        android:scaleType="fitXY" />
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv_version"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_marginRight="30dp"-->
+    <!--        android:gravity="right"-->
+    <!--        android:textColor="#88FFFFFF"-->
+    <!--        android:textSize="22dp"-->
+    <!--        tools:text="V1.0.0"/>-->
+
+</com.fangtang.tv.sdk.ui.view.DeviceBindView>

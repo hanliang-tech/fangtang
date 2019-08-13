@@ -1,0 +1,53 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+apply from: '../gradle-mvn-push.gradle'
+
+def cfg = rootProject.ext.configuration
+def lib = rootProject.ext.libraries
+
+android {
+    compileSdkVersion cfg.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion cfg.minSdkVersion
+        targetSdkVersion cfg.targetSdkVersion
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath false
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+
+    if(cfg.useMaven){
+        api("com.fangtang.tv.sdk:base:$fangtang_sdk_version") { changing = true }
+        api("com.fangtang.tv.sdk:router:$fangtang_sdk_version") { changing = true }
+        api("com.fangtang.tv.sdk:nlp:$fangtang_sdk_version") { changing = true }
+        api("com.fangtang.tv.sdk:leancloud:$fangtang_sdk_version") { changing = true }
+    }else{
+        api project(path: ':lib.nlp')
+        api project(path: ':lib.router')
+        api project(path: ':lib.leancloud')
+        api project(path: ':lib.sdk.base')
+    }
+
+    api lib['kotlin-jdk7']
+}

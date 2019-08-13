@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">lib.sdk.ui</string>
+
+
+    <string name="code_dialog_title">智能音箱绑定</string>
+    <string name="code_dialog_desc1">连接方式：对智能音箱说：“打开方糖视频”</string>
+    <string name="code_dialog_desc2">根据提示，念出上方数字即可用音箱控制电视</string>
+    <string name="bind_desc">对智能音箱说“打开方糖视频”，根据提示念出口令：</string>
+</resources>
