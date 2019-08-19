@@ -9,7 +9,7 @@
 
 ## 二、系统架构图
 
-![系统架构图](https://github.com/hfgang/fangtang/blob/master/doc/quickstart/推荐服务架构图.png)
+![系统架构图](https://github.com/hfgang/fangtang/blob/master/doc/quickstart/方糖私有云架构图.png)
 
 ## 三、各模块说明
 
